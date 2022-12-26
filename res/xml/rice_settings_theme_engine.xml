@@ -86,6 +86,14 @@
         android:summary="@string/theme_customization_wifi_icon_summary"
         android:fragment="com.crdroid.settings.fragments.ui.WifiIcons"/>
         
+    <!-- UI style -->
+    <Preference
+        android:key="android.theme.customization.style"
+        android:icon="@drawable/ic_ui_styles"
+        android:title="@string/theme_customization_ui_style_title"
+        android:summary="@string/theme_customization_ui_style_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.UIStyles"/>
+        
     <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="power_menu_type"
         android:icon="@drawable/ic_lock_outline"
