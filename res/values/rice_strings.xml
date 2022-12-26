@@ -124,5 +124,9 @@
     <string name="artwork_media_background_enable_blur_title">Blur media media notification artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
     <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
+
+    <!-- UI styles -->
+    <string name="theme_customization_ui_style_title">UI Style</string>
+    <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
 </resources>
 
