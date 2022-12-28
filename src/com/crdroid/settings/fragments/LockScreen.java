@@ -89,8 +89,8 @@ public class LockScreen extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
 
-        Context mContext = getActivity().getApplicationContext();
-	ContentResolver resolver = mContext.getContentResolver();
+        final Context mContext = getActivity().getApplicationContext();
+        final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         PreferenceCategory interfaceCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
@@ -118,10 +118,6 @@ public class LockScreen extends SettingsPreferenceFragment
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
 
-        final Context mContext = getActivity().getApplicationContext();
-        final ContentResolver resolver = mContext.getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
         mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_ENABLED);
         boolean mKGCustomClockColorEnabled = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
@@ -132,6 +128,8 @@ public class LockScreen extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Context mContext = getActivity().getApplicationContext();
+	ContentResolver resolver = mContext.getContentResolver();
         if (preference == mKGCustomClockColor) {
                 boolean val = (Boolean) newValue;
                 Settings.Secure.putIntForUser(resolver,
