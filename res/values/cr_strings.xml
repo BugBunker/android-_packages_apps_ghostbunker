@@ -1386,4 +1386,8 @@
     <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
     <string name="ls_media_artwork_fade_percent_title">Fade amount for LS wallpaper and artwork</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for LS wallpaper and artwork</string>
+    
+        <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
 </resources>
