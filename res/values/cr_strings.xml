@@ -1337,4 +1337,8 @@
     <!-- Settings Greetings -->
     <string name="settings_contextual_message_title">Settings contextual messages</string>
     <string name="settings_contextual_message_summary">Enable settings homepage messages that changes base on current time of the day</string>
+    
+    <!-- Android P animation style -->
+    <string name="pie_animation_style_title">Android P animation style</string>
+    <string name="pie_animation_style_summary">Enable Android P \"Default\" animations</string>
 </resources>
