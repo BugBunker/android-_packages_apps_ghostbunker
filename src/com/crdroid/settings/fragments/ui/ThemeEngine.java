@@ -52,6 +52,7 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
     public static final String TAG = "ThemeEngine";
 
     private static final String SETTINGS_DASHBOARD_STYLE = "settings_dashboard_style";
+    private static final String SETTINGS_HEADER_IMAGE = "settings_header_image";
     private static final String USE_STOCK_LAYOUT = "use_stock_layout";
     private static final String ABOUT_PHONE_STYLE = "about_card_style";
     private static final String HIDE_USER_CARD = "hide_user_card";
@@ -73,6 +74,8 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
 
         mSettingsDashBoardStyle = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_STYLE);
         mSettingsDashBoardStyle.setOnPreferenceChangeListener(this);
+        mSettingsHeaderImage = findPreference(SETTINGS_HEADER_IMAGE);
+        mSettingsHeaderImage.setOnPreferenceChangeListener(this);
         mUseStockLayout = (SystemSettingSwitchPreference) findPreference(USE_STOCK_LAYOUT);
         mUseStockLayout.setOnPreferenceChangeListener(this);
         mAboutPhoneStyle = (SystemSettingListPreference) findPreference(ABOUT_PHONE_STYLE);
@@ -96,6 +99,9 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
             Utils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mAboutPhoneStyle) {
+            Utils.showSettingsRestartDialog(getContext());
+            return true;
+        } else if (preference == mSettingsHeaderImage) {
             Utils.showSettingsRestartDialog(getContext());
             return true;
         }
