@@ -42,6 +42,7 @@ import com.android.internal.util.crdroid.Utils;
 
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
+import com.crdroid.settings.preferences.SystemSettingEditTextPreference;
 
 import java.util.List;
 
@@ -56,11 +57,15 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
     private static final String USE_STOCK_LAYOUT = "use_stock_layout";
     private static final String ABOUT_PHONE_STYLE = "about_card_style";
     private static final String HIDE_USER_CARD = "hide_user_card";
-    
+
     private SystemSettingListPreference mSettingsDashBoardStyle;
     private SystemSettingListPreference mAboutPhoneStyle;
     private SystemSettingSwitchPreference mUseStockLayout;
     private SystemSettingSwitchPreference mHideUserCard;
+    private SystemSettingEditTextPreference mSettingsHeaderText;
+    private ThemeUtils mThemeUtils;
+    private Preference mSettingsHeaderImage;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -102,6 +107,11 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
             Utils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mSettingsHeaderImage) {
+            Utils.showSettingsRestartDialog(getContext());
+            return true;
+        } else if (preference == mSettingsHeaderText) {
+            String value = (String) newValue;
+            SystemProperties.set("persist.sys.settings.header_text", value);
             Utils.showSettingsRestartDialog(getContext());
             return true;
         }

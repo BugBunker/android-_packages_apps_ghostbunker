@@ -384,7 +384,6 @@
     <string name="theme_customization_clock_font_summary">Set lockscreen clock font style</string>
     <string name="theme_customization_font_title">Font style</string>
     <string name="theme_customization_font_summary">Set system font style</string>
-<<<<<<< HEAD
     <string name="theme_customization_icon_pack_title">Icon pack</string>
     <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
     <string name="theme_customization_icon_shape_title">Icon shape</string>
@@ -392,12 +391,6 @@
     <string name="theme_customization_date_font_title">Lockscreen date font style</string>
     <string name="theme_customization_date_font_summary">Set lockscreen date font style</string>
     <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
-=======
-    <string name="theme_customization_icon_pack_title">System icon pack</string>
-    <string name="theme_customization_icon_pack_summary">Set system custom icon pack style</string>
-    <string name="theme_customization_icon_shape_title">System shapes</string>
-    <string name="theme_customization_icon_shape_summary">Set system shapes style</string>
->>>>>>> 79e87c0 (settings: Init Theme Engine)
     <string name="theme_customization_signal_icon_title">Signal icon style</string>
     <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
     <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
@@ -1342,6 +1335,8 @@
   
     <!-- Settings Header -->
     <string name="settings_header_image_title">Settings header image</string>
+    <string name="settings_header_text_title">Settings header text</string>
+    <string name="settings_header_text_summary">Custom header text for settings homepage banner (Empty text is fine)</string>
     
     <!-- Settings Greetings -->
     <string name="settings_contextual_message_title">Settings contextual messages</string>
