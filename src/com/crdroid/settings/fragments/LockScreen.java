@@ -17,6 +17,8 @@ package com.crdroid.settings.fragments;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
@@ -24,6 +26,8 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.os.Handler;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -43,15 +47,25 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.lockscreen.UdfpsSettings;
 
+import com.crdroid.settings.preferences.SystemSettingListPreference;
+import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
+
 import java.util.List;
 
 import lineageos.providers.LineageSettings;
+
+import com.android.internal.util.crdroid.Utils;
 
 @SearchIndexable
 public class LockScreen extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener  {
 
     public static final String TAG = "LockScreen";
+
+    private static final String KG_CUSTOM_CLOCK_COLOR_ENABLED = "kg_custom_clock_color_enabled";
+
+    private SwitchPreference mKGCustomClockColor;
+
 
     private static final String LOCKSCREEN_INTERFACE_CATEGORY = "lockscreen_interface_category";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
@@ -99,6 +113,30 @@ public class LockScreen extends SettingsPreferenceFragment
         mWeather = (Preference) findPreference(KEY_WEATHER);
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
+
+        final Context mContext = getActivity().getApplicationContext();
+        final ContentResolver resolver = mContext.getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_ENABLED);
+        boolean mKGCustomClockColorEnabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
+        mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
+        mKGCustomClockColor.setOnPreferenceChangeListener(this);
+
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+	Context mContext = getActivity().getApplicationContext();
+	ContentResolver resolver = mContext.getContentResolver();
+        if (preference == mKGCustomClockColor) {
+            boolean val = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+	}
+        return false;
     }
 
     @Override
