@@ -89,6 +89,10 @@ public class LockScreen extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
 
+        Context mContext = getActivity().getApplicationContext();
+	ContentResolver resolver = mContext.getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
         PreferenceCategory interfaceCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
@@ -128,19 +132,12 @@ public class LockScreen extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-	Context mContext = getActivity().getApplicationContext();
-	ContentResolver resolver = mContext.getContentResolver();
         if (preference == mKGCustomClockColor) {
-            boolean val = (Boolean) newValue;
-            Settings.Secure.putIntForUser(resolver,
+                boolean val = (Boolean) newValue;
+                Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-	}
-        return false;
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return true;
+        }
         return false;
     }
 
