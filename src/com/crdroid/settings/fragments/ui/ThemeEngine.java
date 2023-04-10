@@ -57,6 +57,7 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
     private static final String SETTINGS_HEADER_IMAGE_RANDOM = "settings_header_image_random";
     private static final String SETTINGS_HEADER_TEXT = "settings_header_text";
     private static final String SETTINGS_HEADER_TEXT_ENABLED = "settings_header_text_enabled";
+    private static final String SETTINGS_CONTEXTUAL_MESSAGES = "settings_contextual_messages";
     private static final String USE_STOCK_LAYOUT = "use_stock_layout";
     private static final String ABOUT_PHONE_STYLE = "about_card_style";
     private static final String HIDE_USER_CARD = "hide_user_card";
@@ -69,7 +70,7 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
     private ThemeUtils mThemeUtils;
     private Preference mSettingsHeaderImage;
     private Preference mSettingsHeaderImageRandom;
-
+    private Preference mSettingsMessage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,8 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
         mSettingsDashBoardStyle.setOnPreferenceChangeListener(this);
         mSettingsHeaderImageRandom = findPreference(SETTINGS_HEADER_IMAGE_RANDOM);
         mSettingsHeaderImageRandom.setOnPreferenceChangeListener(this);
+        mSettingsMessage = findPreference(SETTINGS_CONTEXTUAL_MESSAGES);
+        mSettingsMessage.setOnPreferenceChangeListener(this);
         mSettingsHeaderImage = findPreference(SETTINGS_HEADER_IMAGE);
         mSettingsHeaderImage.setOnPreferenceChangeListener(this);
         mUseStockLayout = (SystemSettingSwitchPreference) findPreference(USE_STOCK_LAYOUT);
@@ -116,6 +119,9 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
             Utils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mSettingsHeaderImageRandom) {
+            Utils.showSettingsRestartDialog(getContext());
+            return true;
+        } else if (preference == mSettingsMessage) {
             Utils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mSettingsHeaderText) {
