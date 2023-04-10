@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 
 import androidx.preference.ListPreference;
@@ -67,7 +68,6 @@ public class ThemeEngine extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mUseStockLayout;
     private SystemSettingSwitchPreference mHideUserCard;
     private SystemSettingEditTextPreference mSettingsHeaderText;
-    private ThemeUtils mThemeUtils;
     private Preference mSettingsHeaderImage;
     private Preference mSettingsHeaderImageRandom;
     private Preference mSettingsMessage;
