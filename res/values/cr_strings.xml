@@ -1328,4 +1328,7 @@
     <string name="about_card_style_title">About phone style</string>
     <string name="about_card_style_banner_one">Centered wallpaper banner</string>
     <string name="about_card_style_banner_one_high">Centered wallpaper banner (big)</string>
+  
+    <!-- Settings Header -->
+    <string name="settings_header_image_title">Settings header image</string>
 </resources>
