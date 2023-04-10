@@ -73,6 +73,15 @@
             android:title="@string/lockscreen_weather_location_title"
             android:summary="@string/lockscreen_weather_location_summary"
             android:dependency="lockscreen_weather_enabled" />
+    
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="clock_use_custom_format"
+            android:icon="@drawable/ic_lock_clock"
+            android:title="@string/clock_use_single_line_title"
+            android:entries="@array/clock_use_single_line_entries"
+            android:entryValues="@array/clock_use_single_line_values"
+            android:summary="%s"
+            android:defaultValue="0" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_style"
