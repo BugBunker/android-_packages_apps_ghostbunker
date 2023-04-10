@@ -19,6 +19,10 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="lockscreen_interface_category"
+        android:title="@string/lockscreen_interface_category"/>
+
     <!-- Font style -->
     <Preference
         android:key="android.theme.customization.fonts"
