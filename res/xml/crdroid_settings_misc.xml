@@ -61,6 +61,14 @@
         android:title="@string/gms_enabled_title"
         android:summary="@string/gms_enabled_summary"
         android:fragment="com.crdroid.settings.fragments.misc.GmsSwitch"/>
+        
+    <!-- System Manager Services -->
+    <Preference
+        android:key="system_manager_settings"
+        android:icon="@drawable/ic_battery_charging_80"
+        android:title="@string/system_manager_services_title"
+        android:summary="@string/system_manager_services_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.SystemManagerSettings"/>
 
     <!-- Parallel space -->
     <Preference
