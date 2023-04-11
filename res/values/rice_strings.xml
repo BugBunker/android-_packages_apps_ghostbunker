@@ -98,5 +98,10 @@
     
     <string name="top_level_settings_title">Settings</string>
     <string name="my_device_settings">My device</string>
+
+    <!-- Volume Styles -->
+    <string name="rui_style">Realme UI style</string>
+    <string name="rice_style">Rising style</string>
+    <string name="volume_style_title">Volume panel styles</string>
 </resources>
 
