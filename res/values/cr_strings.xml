@@ -1351,7 +1351,7 @@
     <string name="settings_contextual_message_summary">Enable settings homepage messages that changes base on current time of the day</string>
     
     <!-- System Manager -->
-    <string name="system_manager_services_title">System Manager</string>
+    <string name="system_manager_services_title">Ghost System Manager</string>
     <string name="system_manager_services_summary">Optimize device power consumption and performance</string>
     <string name="system_manager_game_boost_level_title">System Manager Game Boost Mode</string>
     <string name="system_manager_runtime_power_mode_title">System Manager Power Mode</string>
