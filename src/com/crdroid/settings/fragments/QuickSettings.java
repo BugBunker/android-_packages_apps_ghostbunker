@@ -237,8 +237,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             setQsStyle(mOverlayService, "com.android.system.qs.surround");
         }else if (qsPanelStyle == 10) {
             setQsStyle(mOverlayService, "com.android.system.qs.thin");
-        }else if (qsPanelStyle == 11) {
-            setQsStyle(mOverlayService, "com.android.system.qs.twotoneaccenttrans");
         }
     }
 
@@ -277,8 +275,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         "com.android.system.qs.neumorph",
         "com.android.system.qs.reflected",
         "com.android.system.qs.surround",
-        "com.android.system.qs.thin",
-        "com.android.system.qs.twotoneaccenttrans"
+        "com.android.system.qs.thin"
     };
 
     @Override
