@@ -103,5 +103,10 @@
     <string name="rui_style">Realme UI style</string>
     <string name="rice_style">Rising style</string>
     <string name="volume_style_title">Volume panel styles</string>
+    
+    <!-- Media artwork -->
+    <string name="artwork_media_background_enable_blur_title">Blur media media notification artwork background</string>
+    <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
+    <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
 </resources>
 
