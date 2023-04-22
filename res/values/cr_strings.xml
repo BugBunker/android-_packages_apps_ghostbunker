@@ -1395,4 +1395,7 @@
  
     <string name="two_tone_style">Two tone style</string>
     <string name="two_tone_thin_style">Two tone thin style</string>
+
+    <string name="android_eleven">Android 11</string>
+    <string name="qs_ui_title">Quick Settings UI</string>
 </resources>
