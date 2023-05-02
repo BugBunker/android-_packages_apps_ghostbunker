@@ -32,10 +32,8 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference;
-import com.crdroid.settings.preferences.SecureSettingSeekBarPreference;
-
-import lineageos.providers.LineageSettings;
+import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import java.lang.CharSequence;
 
@@ -299,7 +297,7 @@ public class MonetSettings extends DashboardFragment implements
     private void setColorValue(int color) {
         try {
             JSONObject object = getSettingsJson();
-            final String rgbColor = ColorPickerPreference.convertToRGB(color).replace("#", "");
+            final String rgbColor = ColorPickerPreference.convertToARGB(color).replace("#", "");
             object.putOpt(OVERLAY_CATEGORY_ACCENT_COLOR, rgbColor);
             object.putOpt(OVERLAY_CATEGORY_SYSTEM_PALETTE, rgbColor);
             object.putOpt(OVERLAY_COLOR_SOURCE, COLOR_SOURCE_PRESET);
