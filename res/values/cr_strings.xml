@@ -1395,4 +1395,7 @@
     <!-- Android P animation style -->
     <string name="pie_animation_style_title">Android P animation style</string>
     <string name="pie_animation_style_summary">Enable Android P \"Default\" animations</string>
+ 
+    <string name="two_tone_style">Two tone style</string>
+    <string name="two_tone_thin_style">Two tone thin style</string>
 </resources>
