@@ -46,6 +46,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.crdroid.ThemeUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -74,9 +75,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
     private static final String KEY_QS_UI_STYLE  = "qs_ui_style";
+    private static final String overlayThemeTarget  = "com.android.systemui";
 
 
     private Handler mHandler;
+    private CustomSeekBarPreference mQsColumns;
+    private CustomSeekBarPreference mQsRows;
+    private CustomSeekBarPreference mQqsRows;
     private SystemSettingListPreference mQsStyle;
     private SystemSettingListPreference mQsUI;
     private ListPreference mShowBrightnessSlider;
@@ -85,7 +90,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
-    private ThemeUtils Utils;
+    private ThemeUtils mThemeUtils;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,11 +98,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.crdroid_settings_quicksettings);
 
+        mThemeUtils = new ThemeUtils(getActivity());
+
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        Utils = new ThemeUtils(getActivity());
 
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
         mQsUI = (SystemSettingListPreference) findPreference(KEY_QS_UI_STYLE);
@@ -128,26 +134,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
-    }
-
-    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
-    private class CustomSettingsObserver extends ContentObserver {
-
-        CustomSettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            Context mContext = getContext();
-            ContentResolver resolver = mContext.getContentResolver();
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    false, this, UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            }
-        }
     }
     
     @Override

@@ -12,7 +12,7 @@
  * permissions and limitations under the License.
  */
 
-package com.rising.settings.fragments;
+package com.crdroid.settings.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -32,8 +32,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settingslib.widget.LayoutPreference;
 
-import com.rising.settings.preferences.CustomSeekBarPreference;
-import com.rising.settings.preferences.SystemSettingSwitchPreference;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
+import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 
 public class QsLayoutSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
