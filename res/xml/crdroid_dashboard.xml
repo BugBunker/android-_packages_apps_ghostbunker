@@ -20,7 +20,7 @@
       
         <!-- QuickSettings -->
         <Preference
-            android:icon="@drawable/ic_settings_quicksettings"
+            android:icon="@drawable/ic_settings_quicksetting"
             settings:layout="@layout/arc_card_about_top"
             android:title="@string/quicksettings_title"
             android:summary="@string/quick_summary"
@@ -52,7 +52,7 @@
 
         <!-- Navigation -->
         <Preference
-            android:icon="@drawable/ic_settings_notifications"
+            android:icon="@drawable/ic_navbar"
             settings:layout="@layout/arc_card_about_middle"
             android:title="@string/navigation_title"
             android:summary="@string/navigation_summary"
