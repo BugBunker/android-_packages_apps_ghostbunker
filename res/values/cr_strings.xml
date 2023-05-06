@@ -1325,13 +1325,13 @@
     <string name="default_string">Default</string>
     
    <!-- Custom settings dashboard style -->
-    <string name="settings_dashboard_style_title">Settings Styles</string>
-    <string name="settings_dashboard_style_oos">Sushi(legacy OOS)</string>
-    <string name="settings_dashboard_style_rui">Oxygen/ColorOS</string>
+    <string name="settings_dashboard_style_title">Settings homepage Styles</string>
+    <string name="settings_dashboard_style_oos">OxygenOS</string>
+    <string name="settings_dashboard_style_rui">ColorOS</string>
     <string name="settings_dashboard_style_arc">Arcane</string>
     <string name="settings_dashboard_style_aosp">Stock pixel</string>
     <string name="settings_dashboard_style_mt">Google material you</string>
-    <string name="settings_dashboard_style_card">Ayan\'s card ui</string>
+    <string name="settings_dashboard_style_card">Card ui</string>
     <string name="settings_home_style_title">Searchbar style</string>
     <string name="settings_home_style_summary">Use AOSP settings homepage style</string>
     <string name="settings_user_card_title">Hide user card preference</string>
@@ -1355,8 +1355,8 @@
     <string name="pie_animation_style_title">Android P animation style</string>
     <string name="pie_animation_style_summary">Enable Android P \"Default\" animations</string>
  
-    <string name="two_tone_style">Two tone style</string>
-    <string name="two_tone_thin_style">Two tone thin style</string>
+    <string name="two_tone_style">Two tone style (white)</string>
+    <string name="two_tone_thin_style">Two tone thin style (white)</string>
 
     <string name="quick_summary">Quick settings style, and customization</string>
     <string name="bottom_summary">Powermenu, and other bottom option</string>
@@ -1373,6 +1373,6 @@
     <string name="artwork_media_background_enable_blur_title">Blur media notification artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
     <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
-    <string name="ls_media_artwork_fade_percent_title">Fade amount for LS wallpaper & artwork</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for LS wallpaper & artwork</string>
+    <string name="ls_media_artwork_fade_percent_title">Fade amount for LS wallpaper and artwork</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for LS wallpaper and artwork</string>
 </resources>

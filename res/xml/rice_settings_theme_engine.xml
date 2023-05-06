@@ -17,7 +17,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/ui_theme_engine_title">
 
     <PreferenceCategory
         android:key="lockscreen_interface_category"
@@ -146,12 +147,6 @@
           settings:min="1"
           settings:interval="1"
           android:defaultValue="1" />
-
-    <com.crdroid.settings.preferences.SystemSettingEditTextPreference
-          android:key="settings_header_text"
-          android:icon="@drawable/ic_message_fast"
-          android:title="@string/settings_header_text_title"
-          android:defaultValue="#gtrcd" />
            
     <!-- Settings style -->
     <com.crdroid.settings.preferences.SystemSettingListPreference
