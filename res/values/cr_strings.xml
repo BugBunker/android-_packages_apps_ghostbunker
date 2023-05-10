@@ -1426,4 +1426,13 @@
     <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
     <string name="ls_media_artwork_fade_percent_title">Fade amount for LS wallpaper and artwork</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for LS wallpaper and artwork</string>
+
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Importance threshold</string>
+    <string name="hun_importance_min">Minimum</string>
+    <string name="hun_importance_low">Low</string>
+    <string name="hun_importance_default">Default</string>
+    <string name="hun_importance_high">High</string>
+    <string name="hun_importance_max">Maxiumum</string>
 </resources>

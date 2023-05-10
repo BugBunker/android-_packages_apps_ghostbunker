@@ -81,6 +81,14 @@
         android:key="heads_up"
         android:title="@string/notification_heads_up_title">
 
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="heads_up_notifications_threshold"
+            android:title="@string/hun_importance_title"
+            android:summary="%s"
+            android:entries="@array/hun_importance_entries"
+            android:entryValues="@array/hun_importance_values"
+            android:defaultValue="4" />
+
         <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:icon="@drawable/ic_headsup"
