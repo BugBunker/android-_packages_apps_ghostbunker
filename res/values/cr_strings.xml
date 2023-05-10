@@ -1439,4 +1439,8 @@
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expand notifications</string>
     <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
+
+    <!-- Max visible notification icons -->
+    <string name="max_visible_notification_icons_title">Notification icons</string>
+    <string name="max_visible_notification_icons_summary">Max. notification icons visible on statusbar</string>
 </resources>
