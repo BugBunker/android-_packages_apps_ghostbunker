@@ -61,6 +61,19 @@
             android:title="@string/qs_tile_vertical_layout_title"
             android:summary="@string/qs_tile_vertical_layout_summary"
             android:defaultValue="false" />
+            
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+	          android:key="qs_enable_morphing"
+	          android:icon="@drawable/ic_settings_quicksettings"
+       	    android:title="@string/qs_enable_morphing"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_invert_morphing"
+            android:icon="@drawable/ic_settings_quicksettings"
+            android:title="@string/qs_invert_morphing"
+            android:dependency="qs_enable_morphing"
+            android:defaultValue="false" />
 
         <com.android.settingslib.widget.LayoutPreference
             android:key="apply_change_button"

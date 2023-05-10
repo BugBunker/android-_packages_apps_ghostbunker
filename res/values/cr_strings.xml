@@ -1404,6 +1404,10 @@
 
     <string name="android_eleven">Android 11</string>
     <string name="qs_ui_title">Quick Settings design</string>
+
+    <!-- Qs Morphing-->
+    <string name="qs_enable_morphing">Enable Morphing on qs tiles</string>
+    <string name="qs_invert_morphing">Swap Morphing on qs tiles</string>
     
     <string name="quick_summary">Quick settings style, and customization</string>
     <string name="bottom_summary">Powermenu, and other bottom option</string>
