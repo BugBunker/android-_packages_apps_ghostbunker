@@ -52,6 +52,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
     private Context mContext;
 
     private CustomSeekBarPreference mQsColumns;
+    private SystemSettingListPreference mPageTransitions;
     private CustomSeekBarPreference mQsRows;
     private CustomSeekBarPreference mQqsRows;
 
