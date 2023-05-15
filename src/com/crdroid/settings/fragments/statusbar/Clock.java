@@ -55,11 +55,15 @@ public class Clock extends SettingsPreferenceFragment
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
     private static final String CLOCK_DATE_STYLE = "status_bar_clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "status_bar_clock_date_format";
+    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
+    private static final String QS_HEADER_CLOCK_SIZE = "qs_header_clock_size";
 
     private static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+    private CustomSeekBarPreference mClockSize;
+    private CustomSeekBarPreference mQsClockSize;
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private SystemSettingListPreference mClockDateDisplay;
     private SystemSettingListPreference mClockDatePosition;
@@ -103,6 +107,18 @@ public class Clock extends SettingsPreferenceFragment
         parseClockDateFormats();
         mClockDateFormat.setEnabled(dateDisplay > 0);
         mClockDateFormat.setOnPreferenceChangeListener(this);
+
+        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        int clockSize = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
+        mClockSize.setValue(clockSize / 1);
+        mClockSize.setOnPreferenceChangeListener(this);
+
+        mQsClockSize = (CustomSeekBarPreference) findPreference(QS_HEADER_CLOCK_SIZE);
+        int qsClockSize = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_HEADER_CLOCK_SIZE, 14);
+        mQsClockSize.setValue(qsClockSize / 1);
+        mQsClockSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -171,6 +187,16 @@ public class Clock extends SettingsPreferenceFragment
                       Settings.System.STATUS_BAR_CLOCK_DATE_FORMAT, (String) newValue);
               }
           }
+          return true;
+      } else if (preference == mQsClockSize) {
+          int width = ((Integer)newValue).intValue();
+          Settings.System.putInt(getActivity().getContentResolver(),
+                  Settings.System.QS_HEADER_CLOCK_SIZE, width);
+          return true;
+      } else if (preference == mClockSize) {
+          int width = ((Integer)newValue).intValue();
+          Settings.System.putInt(getActivity().getContentResolver(),
+                  Settings.System.STATUS_BAR_CLOCK_SIZE, width);
           return true;
       }
       return false;

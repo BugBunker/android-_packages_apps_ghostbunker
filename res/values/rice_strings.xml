@@ -124,5 +124,9 @@
     <string name="artwork_media_background_enable_blur_title">Blur media media notification artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
     <string name="media_artwork_fade_percent_title">Fade percent for media notification artwork</string>
+
+    <!-- Clock Size -->
+    <string name="status_bar_clock_font_size_title">Statusbar Clock font size</string>
+    <string name="qs_clock_font_size_title">QS Header Clock font size</string>
 </resources>
 
