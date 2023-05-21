@@ -85,17 +85,9 @@
         <!-- UserInterface -->
         <Preference
             android:icon="@drawable/ic_color_bucket"
-            settings:layout="@layout/arc_card_about_middle"
+            settings:layout="@layout/arc_card_about_bottom"
             android:title="@string/ui_title"
             android:summary="@string/user_summary"
             android:fragment="com.crdroid.settings.fragments.UserInterface" />
-
-        <!-- About -->
-        <Preference
-            android:icon="@drawable/ic_settings_about"
-            settings:layout="@layout/arc_card_about_bottom"
-            android:title="@string/about_crdroid"
-            android:summary="@string/about_summary"
-            android:fragment="com.crdroid.settings.fragments.About" />
 
 </PreferenceScreen>
