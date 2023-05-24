@@ -93,6 +93,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mDataDisabled;
     private SwitchPreference mOldMobileType;
     private SwitchPreference mBatteryTextCharging;
+    private SwitchPreference mCombinedSignalIcons;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
