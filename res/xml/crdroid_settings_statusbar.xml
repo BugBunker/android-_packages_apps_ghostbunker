@@ -61,6 +61,13 @@
             android:icon="@drawable/ic_signal"
             android:title="@string/old_mobiletype_title"
             android:summary="@string/old_mobiletype_summary" />
+            
+        <SwitchPreference
+            android:key="enable_combined_signal_icons"
+            android:icon="@drawable/ic_signal"
+            android:title="@string/combined_status_bar_signal_icons_title"
+            android:summary="@string/combined_status_bar_signal_icons_summary"
+            android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
