@@ -37,6 +37,7 @@ import com.android.settingslib.widget.LayoutPreference;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
+import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 
 public class QsLayoutSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -48,6 +49,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
     private static final String KEY_QQS_ROW_PORTRAIT = "qqs_layout_rows";
     private static final String KEY_APPLY_CHANGE_BUTTON = "apply_change_button";
     private static final String QS_PAGE_TRANSITIONS = "custom_transitions_page_tile";
+    private static final String KEY_QS_LABEL_SIZE = "qs_tile_label_size";
 
     private Context mContext;
 
@@ -55,6 +57,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
     private SystemSettingListPreference mPageTransitions;
     private CustomSeekBarPreference mQsRows;
     private CustomSeekBarPreference mQqsRows;
+    private SystemSettingSeekBarPreference mSize;
 
     private Button mApplyChange;
 
@@ -93,6 +96,9 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
 
         mQqsRows = (CustomSeekBarPreference) findPreference(KEY_QQS_ROW_PORTRAIT);
         mQqsRows.setOnPreferenceChangeListener(this);
+
+        mSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_LABEL_SIZE);
+        mSize.setEnabled(!hideLabel);
 
         mContext = getContext();
 
@@ -142,6 +148,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
         if (preference == mHide) {
             boolean hideLabel = (Boolean) newValue;
             mVertical.setEnabled(!hideLabel);
+            mSize.setEnabled(!hideLabel);
         } else if (preference == mQsColumns) {
             int qs_columns = Integer.parseInt(newValue.toString());
             mApplyChange.setEnabled(
