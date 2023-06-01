@@ -1525,4 +1525,8 @@
     <string name="ambient_icons_size_title">AOD icons size</string>
     <string name="ambient_icons_color_title">AOD icons color</string>
     <string name="ambient_icons_intro_text">Requires a SystemUI restart</string>
+
+    <!-- Squiggle animation -->
+    <string name="hide_squiggle_animation_title">Hide squiggle animation</string>
+    <string name="hide_squiggle_animation_summary">Hide media panel squiggle animation, after changing you need to switch music, pause music or move the progress bar to apply</string>
 </resources>

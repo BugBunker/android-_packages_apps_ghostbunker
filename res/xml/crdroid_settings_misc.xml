@@ -106,6 +106,14 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <!-- Squiggle animation -->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="hide_media_squiggle_animation"
+        android:icon="@drawable/ic_television_classic"
+        android:title="@string/hide_squiggle_animation_title"
+        android:summary="@string/hide_squiggle_animation_summary"
+        android:defaultValue="false" />
+
     <!-- Weather -->
     <Preference
         android:icon="@drawable/ic_omnijaws"
