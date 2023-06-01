@@ -49,6 +49,7 @@ import com.crdroid.settings.fragments.lockscreen.UdfpsSettings;
 
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
+import com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference;
 
 import java.util.List;
 
@@ -77,6 +78,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_SHORTCUT_START_KEY = "lockscreen_shortcut_start";
     private static final String KEY_SHORTCUT_END_KEY = "lockscreen_shortcut_end";
     private static final String KEY_SHORTCUT_ENFORCE_KEY = "lockscreen_shortcut_enforce";
+    private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
 
     private static final String[] DEFAULT_START_SHORTCUT = new String[] { "home", "flashlight", "do_not_disturb" };
     private static final String[] DEFAULT_END_SHORTCUT = new String[] { "wallet", "qr_code_scanner", "camera" };
@@ -89,6 +91,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private ListPreference mStartShortcut;
     private ListPreference mEndShortcut;
     private SwitchPreference mEnforceShortcut;
+    private SystemSettingColorPickerPreference mAmbientIconsColor;
 
     private OmniJawsClient mWeatherClient;
 
@@ -141,6 +144,8 @@ public class LockScreen extends SettingsPreferenceFragment
         mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
         mKGCustomClockColor.setOnPreferenceChangeListener(this);
 
+        mAmbientIconsColor = (SystemSettingColorPickerPreference) findPreference(AMBIENT_ICONS_COLOR);
+        mAmbientIconsColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -162,6 +167,9 @@ public class LockScreen extends SettingsPreferenceFragment
             boolean val = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mAmbientIconsColor) {
+            Utils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;
