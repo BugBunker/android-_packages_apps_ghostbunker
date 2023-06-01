@@ -50,6 +50,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
     private static final String KEY_APPLY_CHANGE_BUTTON = "apply_change_button";
     private static final String QS_PAGE_TRANSITIONS = "custom_transitions_page_tile";
     private static final String KEY_QS_LABEL_SIZE = "qs_tile_label_size";
+    private static final String KEY_QS_SECONDARY_LABEL_SIZE = "qs_tile_secondary_label_size";
 
     private Context mContext;
 
@@ -58,6 +59,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsRows;
     private CustomSeekBarPreference mQqsRows;
     private SystemSettingSeekBarPreference mSize;
+    private SystemSettingSeekBarPreference mSizeSec;
 
     private Button mApplyChange;
 
@@ -99,6 +101,9 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
 
         mSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_LABEL_SIZE);
         mSize.setEnabled(!hideLabel);
+
+        mSizeSec = (SystemSettingSeekBarPreference) findPreference(KEY_QS_SECONDARY_LABEL_SIZE);
+        mSizeSec.setEnabled(!hideLabel);
 
         mContext = getContext();
 
@@ -149,6 +154,7 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
             boolean hideLabel = (Boolean) newValue;
             mVertical.setEnabled(!hideLabel);
             mSize.setEnabled(!hideLabel);
+            mSizeSec.setEnabled(!hideLabel);
         } else if (preference == mQsColumns) {
             int qs_columns = Integer.parseInt(newValue.toString());
             mApplyChange.setEnabled(
