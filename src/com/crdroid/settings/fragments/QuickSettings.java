@@ -76,7 +76,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
     private static final String KEY_QS_UI_STYLE  = "qs_ui_style";
     private static final String overlayThemeTarget  = "com.android.systemui";
-
+    private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
 
     private Handler mHandler;
     private CustomSeekBarPreference mQsColumns;
@@ -92,6 +92,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationInterpolator;
     private ThemeUtils mThemeUtils;
     private Preference mCombinedQsHeaders;
+    private SwitchPreference mBatteryEstimate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -138,6 +139,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mCombinedQsHeaders = findPreference("persist.sys.flags.combined_qs_headers");
         mCombinedQsHeaders.setOnPreferenceChangeListener(this);
+
+        boolean turboInstalled = SparkUtils.isPackageInstalled(getContext(),
+                "com.google.android.apps.turbo");
+        mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
+        if (!turboInstalled)
+            prefScreen.removePreference(mBatteryEstimate);
     }
     
     @Override
@@ -296,5 +303,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_quicksettings);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_quicksettings) {
+
+    @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    boolean turboInstalled = SparkUtils.isPackageInstalled(context,
+                            "com.google.android.apps.turbo");
+
+                    if (!turboInstalled)
+                        keys.add(KEY_PREF_BATTERY_ESTIMATE);
+
+                    return keys;
+                }
+            };
 }
