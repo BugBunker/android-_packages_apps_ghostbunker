@@ -140,7 +140,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mCombinedQsHeaders = findPreference("persist.sys.flags.combined_qs_headers");
         mCombinedQsHeaders.setOnPreferenceChangeListener(this);
 
-        boolean turboInstalled = SparkUtils.isPackageInstalled(getContext(),
+        boolean turboInstalled = Utils.isPackageInstalled(getContext(),
                 "com.google.android.apps.turbo");
         mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
         if (!turboInstalled)

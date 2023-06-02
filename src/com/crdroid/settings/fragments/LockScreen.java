@@ -38,6 +38,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.OmniJawsClient;
+import com.android.internal.util.crdroid.ThemeUtils;
 import com.android.internal.util.crdroid.Utils;
 
 import com.android.settings.R;
@@ -169,7 +170,7 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mAmbientIconsColor) {
-            Utils.showSystemUiRestartDialog(getContext());
+            ThemeUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;

@@ -1511,9 +1511,6 @@
     <string name="power_menu_transparency">Power/reboot menu opacity</string>
     <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
     
-    <!-- Location settings screen, setting summary for Assisted GPS switch -->
-    <string name="assisted_gps_summary">Download satellite assistance data from the internet which can greatly improve the GPS startup performance. For emergency calls, assisted GPS is always allowed.</string>
-
     <!-- Combined Qs Headers -->
     <string name="combined_qs_headers_title">Combined Qs Headers </string>
     <string name="combined_qs_headers_summary">Switch to QPR2 header layout</string>
@@ -1611,4 +1608,6 @@
     <string name="function_font_notoserif_italic">NotoSerif Italic</string>
     <string name="function_font_notoserif_bold">NotoSerif Bold</string>
     <string name="function_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
+    
+    <string name="qs_tile_label_size_title">Label text size</string>
 </resources>

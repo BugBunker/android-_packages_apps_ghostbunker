@@ -22,7 +22,7 @@
          android:key="ambient_customization"
          android:title="@string/ambient_text_category_title"
          android:summary="@string/ambient_text_category_summary"
-         android:fragment="com.spark.settings.fragments.AmbientCustomizations" />
+         android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.AmbientCustomizations" />
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_enabled"

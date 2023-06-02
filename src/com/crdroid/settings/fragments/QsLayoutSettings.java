@@ -99,12 +99,6 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
         mQqsRows = (CustomSeekBarPreference) findPreference(KEY_QQS_ROW_PORTRAIT);
         mQqsRows.setOnPreferenceChangeListener(this);
 
-        mSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_LABEL_SIZE);
-        mSize.setEnabled(!hideLabel);
-
-        mSizeSec = (SystemSettingSeekBarPreference) findPreference(KEY_QS_SECONDARY_LABEL_SIZE);
-        mSizeSec.setEnabled(!hideLabel);
-
         mContext = getContext();
 
         LayoutPreference preference = findPreference(KEY_APPLY_CHANGE_BUTTON);
@@ -140,6 +134,12 @@ public class QsLayoutSettings extends SettingsPreferenceFragment
 
         final boolean hideLabel = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_TILE_LABEL_HIDE, 0, UserHandle.USER_CURRENT) == 1;
+                
+        mSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_LABEL_SIZE);
+        mSize.setEnabled(!hideLabel);
+
+        mSizeSec = (SystemSettingSeekBarPreference) findPreference(KEY_QS_SECONDARY_LABEL_SIZE);
+        mSizeSec.setEnabled(!hideLabel);
 
         mHide = (SystemSettingSwitchPreference) findPreference(KEY_QS_HIDE_LABEL);
         mHide.setOnPreferenceChangeListener(this);
