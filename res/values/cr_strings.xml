@@ -1610,4 +1610,8 @@
     <string name="function_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
     
     <string name="qs_tile_label_size_title">Label text size</string>
+    
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Secure QS tiles require unlocking</string>
+    <string name="qstile_requires_unlocking_summary">The following QS tiles require unlocking before you can acccess them from lock screen:\nAirplane, Cellular, NFC, Hotspot, USB tethering and Location</string>
 </resources>
