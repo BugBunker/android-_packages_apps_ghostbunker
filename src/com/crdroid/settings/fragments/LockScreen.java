@@ -93,6 +93,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private ListPreference mEndShortcut;
     private SwitchPreference mEnforceShortcut;
     private SystemSettingColorPickerPreference mAmbientIconsColor;
+    private Preference mBouncerUserSwitcher;
 
     private OmniJawsClient mWeatherClient;
 
@@ -147,6 +148,9 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mAmbientIconsColor = (SystemSettingColorPickerPreference) findPreference(AMBIENT_ICONS_COLOR);
         mAmbientIconsColor.setOnPreferenceChangeListener(this);
+        
+        mBouncerUserSwitcher = findPreference("persist.sys.flags.bouncer_user_switcher");
+        mBouncerUserSwitcher.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -171,6 +175,11 @@ public class LockScreen extends SettingsPreferenceFragment
             return true;
         } else if (preference == mAmbientIconsColor) {
             ThemeUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        } else if (preference == mBouncerUserSwitcher) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                Settings.Secure.ENABLE_BOUNCER_USER_SWITCHER, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

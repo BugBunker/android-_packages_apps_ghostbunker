@@ -1628,4 +1628,8 @@
     
     <string name="battery_level_colors_title">Toggle colorful battery icon</string>
     <string name="battery_level_colors_summary">Each battery level drop is color coded</string>
+    
+    <!-- Combined Qs Headers -->
+    <string name="bouncer_user_switcher_title">Lockscreen bouncer user</string>
+    <string name="bouncer_user_switcher_summary">Show user avater in lockscreen</string>
 </resources>
