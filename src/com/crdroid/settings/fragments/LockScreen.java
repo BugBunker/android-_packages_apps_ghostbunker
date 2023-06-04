@@ -80,6 +80,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
     private Preference mWeather;
+    private Preference mBouncerUserSwitcher;
 
     private OmniJawsClient mWeatherClient;
 
@@ -123,7 +124,9 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
         mKGCustomClockColor.setOnPreferenceChangeListener(this);
-
+        
+        mBouncerUserSwitcher = findPreference("persist.sys.flags.bouncer_user_switcher");
+        mBouncerUserSwitcher.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -135,6 +138,11 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
         return true;
+        } else if (preference == mBouncerUserSwitcher) {
+                boolean value = (Boolean) newValue;
+                Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.ENABLE_BOUNCER_USER_SWITCHER, value ? 1 : 0, UserHandle.USER_CURRENT);
+           return true;
         }
         return false;
     }
