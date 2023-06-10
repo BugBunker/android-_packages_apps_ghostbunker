@@ -148,5 +148,9 @@
     
     <string name="haptic_on_slider_title">Volume rocker Haptic feedback</string>
     <string name="haptic_on_slider_summary">Haptic feedback when adjusting volume with volume rocker</string>
+    
+    <!-- QS haptic feedback -->
+    <string name="qs_haptic_feedback_title">QS haptic feedback</string>
+    <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
 </resources>
 
