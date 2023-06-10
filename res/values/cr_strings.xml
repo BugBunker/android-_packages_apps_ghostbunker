@@ -1513,4 +1513,8 @@
     
     <!-- Location settings screen, setting summary for Assisted GPS switch -->
     <string name="assisted_gps_summary">Download satellite assistance data from the internet which can greatly improve the GPS startup performance. For emergency calls, assisted GPS is always allowed.</string>
+
+    <!-- Combined Qs Headers -->
+    <string name="combined_qs_headers_title">Combined Qs Headers </string>
+    <string name="combined_qs_headers_summary">Switch to QPR2 header layout</string>
 </resources>

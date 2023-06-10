@@ -91,6 +91,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
     private ThemeUtils mThemeUtils;
+    private Preference mCombinedQsHeaders;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,6 +135,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
+
+        mCombinedQsHeaders = findPreference("persist.sys.flags.combined_qs_headers");
+        mCombinedQsHeaders.setOnPreferenceChangeListener(this);
     }
     
     @Override
@@ -153,6 +157,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mQsUI) {
             mCustomSettingsObserver.observe();
+            return true;
+        } else if (preference == mCombinedQsHeaders) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                Settings.Secure.ENABLE_COMBINED_QS_HEADERS, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

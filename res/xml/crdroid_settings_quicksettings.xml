@@ -40,6 +40,13 @@
             android:summary="@string/qs_dual_tone_summary"
             android:defaultValue="true" />
 
+         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.flags.combined_qs_headers"
+            android:icon="@drawable/ic_header"
+            android:title="@string/combined_qs_headers_title"
+            android:summary="@string/combined_qs_headers_summary" 
+            android:defaultValue="false"/>
+
         <!-- QS clock
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"
