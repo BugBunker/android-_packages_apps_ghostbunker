@@ -128,5 +128,9 @@
     <!-- UI styles -->
     <string name="theme_customization_ui_style_title">UI Style</string>
     <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
+    
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">QS dual-tone</string>
+    <string name="qs_dual_tone_summary">Use dual tone background colors</string>
 </resources>
 
