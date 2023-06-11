@@ -45,7 +45,7 @@
             android:icon="@drawable/ic_header"
             android:title="@string/combined_qs_headers_title"
             android:summary="@string/combined_qs_headers_summary" 
-            android:defaultValue="false"/>
+            android:defaultValue="true"/>
 
         <com.crdroid.settings.preferences.SystemSettingListPreference    
             android:key="qs_show_weather_temp"
