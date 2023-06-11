@@ -309,7 +309,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
 
-                    boolean turboInstalled = SparkUtils.isPackageInstalled(context,
+                    boolean turboInstalled = Utils.isPackageInstalled(context,
                             "com.google.android.apps.turbo");
 
                     if (!turboInstalled)
