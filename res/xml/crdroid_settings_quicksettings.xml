@@ -33,6 +33,13 @@
             android:max="74"
             android:min="0" />
             
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_random_header_image"
+            android:icon="@drawable/ic_header"
+            android:title="@string/qs_random_header_image_title"
+            android:summary="@string/qs_random_header_image_summary"
+            android:defaultValue="false" />
+            
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_dual_tone"
             android:icon="@drawable/ic_settings_quicksettings"

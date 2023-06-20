@@ -152,5 +152,8 @@
     <!-- QS haptic feedback -->
     <string name="qs_haptic_feedback_title">QS haptic feedback</string>
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
+    
+    <string name="qs_random_header_image_title">Random QS Header Image</string>
+    <string name="qs_random_header_image_summary">Show random qs header images instead of static one</string>
 </resources>
 
