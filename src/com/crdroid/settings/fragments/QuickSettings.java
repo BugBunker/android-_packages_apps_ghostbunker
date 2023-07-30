@@ -30,6 +30,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.os.Handler;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -76,8 +77,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationInterpolator;
     private SystemSettingListPreference mPageTransitions;
     private Handler mHandler;
-    private IOverlayManager mOverlayManager;
-    private IOverlayManager mOverlayService;
     private SystemSettingListPreference mQsStyle;
 
     @Override
@@ -90,16 +89,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        final Context mContext = getActivity().getApplicationContext();
-        final ContentResolver resolver = mContext.getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
         mUtils = new Utils(getActivity());
 
-        mOverlayService = IOverlayManager.Stub
-        .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
-
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
+
         mCustomSettingsObserver.observe();
 
         mPageTransitions = (SystemSettingListPreference) findPreference(QS_PAGE_TRANSITIONS);
@@ -161,9 +154,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mQsStyle) {
             mCustomSettingsObserver.observe();
             return true;
-        }
-        return false;
-    }
 
     private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
     private class CustomSettingsObserver extends ContentObserver {
@@ -253,6 +243,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.QS_LAYOUT_COLUMNS, 2, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_VERTICAL_LAYOUT, 0, UserHandle.USER_CURRENT);
                 Settings.System.QS_LAYOUT_COLUMNS, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_VERTICAL_LAYOUT, 0, UserHandle.USER_CURRENT);
